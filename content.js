@@ -187,14 +187,14 @@ function applyState() {
 }
 
 function loadState() {
-  chrome.storage.sync.get({ [STORAGE_KEY]: true }, (result) => {
+  extensionApi.get({ [STORAGE_KEY]: true }, (result) => {
     enabled = Boolean(result[STORAGE_KEY]);
     applyState();
   });
 }
 
-chrome.storage.onChanged.addListener((changes, areaName) => {
-  if (areaName !== "sync" || !changes[STORAGE_KEY]) {
+extensionApi.onStorageChanged((changes, areaName) => {
+  if (areaName !== extensionApi.getStorageAreaName() || !changes[STORAGE_KEY]) {
     return;
   }
 

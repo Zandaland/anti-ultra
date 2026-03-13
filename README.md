@@ -4,7 +4,7 @@
 
 ![Anti Ultra icon](icons/icon-128.png)
 
-Anti Ultra is a small Chrome extension that removes Google AI Ultra upsell UI from Gemini, then lets you bring it back with a single toggle whenever you want.
+Anti Ultra is a small browser extension that removes Google AI Ultra upsell UI from Gemini, then lets you bring it back with a single toggle whenever you want.
 
 Chrome Web Store release is currently under review. Public listing link coming soon.
 
@@ -14,7 +14,7 @@ Chrome Web Store release is currently under review. Public listing link coming s
 - Hides Gemini Ultra upgrade buttons in menus and other upsell spots
 - Keeps the page clean as Gemini updates the DOM
 - Lets you quickly switch between hidden and visible from the popup
-- Remembers your preference with Chrome sync
+- Remembers your preference with browser sync when available, with a local fallback for Firefox-compatible installs
 
 ## Why it exists
 
@@ -28,7 +28,7 @@ The extension only:
 
 - runs on `https://gemini.google.com/*`
 - checks the page for specific upsell elements so it can hide them
-- stores one synced setting in Chrome: whether hiding is enabled
+- stores one browser setting: whether hiding is enabled
 
 It does not send data to a server, inject remote code, or use analytics.
 
@@ -46,18 +46,27 @@ Used so the content script can find and hide Gemini Ultra upsell elements on Gem
 
 ## Install locally
 
+### Chrome
+
 1. Open `chrome://extensions`
 2. Turn on **Developer mode**
 3. Click **Load unpacked**
 4. Select the downloaded or cloned `anti-ultra` project folder
 
+### Firefox
+
+1. Open `about:debugging#/runtime/this-firefox`
+2. Click **Load Temporary Add-on**
+3. Select the `manifest.json` file from the downloaded or cloned `anti-ultra` project folder
+
 ## How it works
 
-`content.js` injects hiding rules for known Gemini Ultra upsell selectors and watches for DOM changes so newly added upsell UI gets hidden too. The popup writes a single `chrome.storage.sync` value to turn the behavior on or off.
+`content.js` injects hiding rules for known Gemini Ultra upsell selectors and watches for DOM changes so newly added upsell UI gets hidden too. The popup writes a single browser storage value to turn the behavior on or off, preferring sync storage and falling back to local storage where needed.
 
 ## Project structure
 
 - `manifest.json` - Chrome extension manifest (MV3)
+- `browser-api.js` - shared browser API wrapper for Chrome and Firefox storage handling
 - `content.js` - Gemini page cleanup logic
 - `popup.html` - popup markup
 - `popup.css` - popup styling

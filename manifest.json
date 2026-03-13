@@ -3,6 +3,11 @@
   "name": "Anti Ultra",
   "description": "Hides Gemini's Google AI Ultra upsell elements with a quick popup toggle.",
   "version": "1.0.0",
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "anti-ultra@local"
+    }
+  },
   "permissions": [
     "storage"
   ],
@@ -31,6 +36,7 @@
         "https://gemini.google.com/*"
       ],
       "js": [
+        "browser-api.js",
         "content.js"
       ],
       "run_at": "document_start"

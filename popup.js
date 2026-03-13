@@ -14,17 +14,17 @@ function render(enabled) {
 }
 
 function updateState(enabled) {
-  chrome.storage.sync.set({ [STORAGE_KEY]: enabled }, () => {
+  extensionApi.set({ [STORAGE_KEY]: enabled }, () => {
     render(enabled);
   });
 }
 
 toggleButton.addEventListener("click", () => {
-  chrome.storage.sync.get({ [STORAGE_KEY]: true }, (result) => {
+  extensionApi.get({ [STORAGE_KEY]: true }, (result) => {
     updateState(!result[STORAGE_KEY]);
   });
 });
 
-chrome.storage.sync.get({ [STORAGE_KEY]: true }, (result) => {
+extensionApi.get({ [STORAGE_KEY]: true }, (result) => {
   render(Boolean(result[STORAGE_KEY]));
 });

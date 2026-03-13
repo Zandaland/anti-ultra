@@ -2,13 +2,13 @@
 
 Last updated: March 13, 2026
 
-Anti Ultra is a Chrome extension that hides Google AI Ultra upsell elements on `https://gemini.google.com/*`.
+Anti Ultra is a browser extension that hides Google AI Ultra upsell elements on `https://gemini.google.com/*`.
 
 ## What data Anti Ultra collects
 
 Anti Ultra does not collect, sell, or transfer personal information.
 
-Anti Ultra only stores one setting using `chrome.storage.sync`:
+Anti Ultra only stores one browser setting using extension storage:
 
 - whether the extension is currently enabled or disabled
 
