@@ -1,8 +1,12 @@
 # Anti Ultra
 
+![Chrome Web Store status](https://img.shields.io/badge/Chrome%20Web%20Store-Under%20review-orange?style=for-the-badge&logo=googlechrome&logoColor=white)
+
 ![Anti Ultra icon](icons/icon-128.png)
 
 Anti Ultra is a small Chrome extension that removes Google AI Ultra upsell UI from Gemini, then lets you bring it back with a single toggle whenever you want.
+
+Chrome Web Store release is currently under review. Public listing link coming soon.
 
 ## What it does
 
@@ -45,7 +49,7 @@ Used so the content script can find and hide Gemini Ultra upsell elements on Gem
 1. Open `chrome://extensions`
 2. Turn on **Developer mode**
 3. Click **Load unpacked**
-4. Select this folder: `C:\Users\moham\Desktop\Development\anti-ultra`
+4. Select the downloaded or cloned `anti-ultra` project folder
 
 ## How it works
 
