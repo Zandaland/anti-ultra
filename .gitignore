@@ -1,0 +1,6 @@
+# Release archives
+*.zip
+
+# OS files
+Thumbs.db
+.DS_Store
