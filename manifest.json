@@ -5,7 +5,13 @@
   "version": "1.0.0",
   "browser_specific_settings": {
     "gecko": {
-      "id": "anti-ultra@local"
+      "id": "{a34a91b6-0e14-4c76-b65b-22f94c14c2c7}",
+      "strict_min_version": "140.0",
+      "data_collection_permissions": {
+        "required": [
+          "none"
+        ]
+      }
     }
   },
   "permissions": [
